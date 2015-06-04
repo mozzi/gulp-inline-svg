@@ -62,7 +62,7 @@ The _svg.scss file will provide you with the following mixins and functions:
 ## Configuration
 If you want wo customize the default configuration, you can pass an options object to the task function:
 
-´´´javascript
+```javascript
 gulp.src("css/**/*.css")
 	.pipe(svgMin())
 	.pipe(inlineSvg({

@@ -1,6 +1,6 @@
 {
   "name": "gulp-inline-svg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A gulp plugin to use inline SVG as background-images",
   "keywords": [
     "gulpplugin, gulp, svg, inline"
@@ -12,7 +12,7 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "http://gitlab.sgalinski.de/toolchain/gulp-inline-svg.git"
+    "url": "https://gitlab.sgalinski.de/toolchain/gulp-inline-svg.git"
   },
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",

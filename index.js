@@ -14,7 +14,8 @@ module.exports = function (_options) {
 		svgs = [],
 		options = {
 			filename: '_svg.scss',
-			template: __dirname + '/template.mustache'
+			template: __dirname + '/template.mustache',
+			replaceColors: false
 		};
 
 		// merge options
@@ -72,10 +73,13 @@ module.exports = function (_options) {
 
 				var iteration = 0;
 
-				var inlineSvg = encodeURIComponent(String(file.contents)).replace(new RegExp('(stroke|fill+)%3D%22%23?((?:.(?!%23?\s+(?:\S+)%3D|[%3E%22]))+.)%22?', 'gim'), function(match, p1, p2) {
+				var inlineSvg = encodeURIComponent(String(file.contents));
+				if(options.replaceColors){
+					inlineSvg = inlineSvg.replace(new RegExp('(stroke|fill+)%3D%22%23?((?:.(?!%23?\s+(?:\S+)%3D|[%3E%22]))+.)%22?', 'gim'), function(match, p1, p2) {
 					console.log('p2', p2);
 					return p1 + '%3D%22%23#{color' + ++iteration + '}%22';
 				});
+				}
 
 				// store this svg data
 				svgs.push({
